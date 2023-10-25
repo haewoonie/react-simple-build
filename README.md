@@ -6,4 +6,3 @@
 - axios
 - zustand
 - Ant Design
-# react-simple-build

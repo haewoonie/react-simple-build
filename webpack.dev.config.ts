@@ -41,6 +41,13 @@ const config: Configuration = {
         test: /\.less?$/,
         use: ["style-loader", "css-loader", "less-loader"],
       },
+      {
+        test: /\.jpg|png|gif?$/,
+        use: "url-loader",
+        options: {
+          limit: 87978,
+        },
+      },
     ],
   },
   resolve: {
