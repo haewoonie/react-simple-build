@@ -42,11 +42,8 @@ const config: Configuration = {
         use: ["style-loader", "css-loader", "less-loader"],
       },
       {
-        test: /\.jpg|png|gif?$/,
-        use: "url-loader",
-        options: {
-          limit: 87978,
-        },
+        test: /\.jpg|png|gif$/,
+        use: "file-loader",
       },
     ],
   },
