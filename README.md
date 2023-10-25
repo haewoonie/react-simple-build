@@ -29,12 +29,13 @@ npm install
 npm start
 ```
 
-路由表入口
+路由表入口（react-router-dom）
 
 - /src/router/index.tsx
 - 以组件方式引入，写入 path & element
 
-全局 state 配置
+全局 state 配置（zustand）
 
 - /src/store
 - 预配置：用户名/密码
+- 持久化策略：sessionStorage
