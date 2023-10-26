@@ -29,6 +29,12 @@ npm install
 npm start
 ```
 
+打包
+
+```
+npm run build
+```
+
 路由表入口（react-router-dom）
 
 - /src/router/index.tsx

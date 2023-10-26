@@ -11,6 +11,8 @@ interface LoginProps {
   onLogin: (valuse: LoginUser) => boolean; // 登录事件
 }
 
+// 用户登录数据持久化
+
 const LoginFormComponent = (props: LoginProps) => {
   const { nextStep, onLogin } = props;
 
