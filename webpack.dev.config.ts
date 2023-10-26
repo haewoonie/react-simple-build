@@ -5,6 +5,7 @@ import {
   HotModuleReplacementPlugin,
 } from "webpack";
 import { Configuration as WebpackDevServerConfig } from "webpack-dev-server";
+import DotenvWebpack from "dotenv-webpack";
 
 type Configuration = WebpackConfig & {
   devServer?: WebpackDevServerConfig;
@@ -56,6 +57,10 @@ const config: Configuration = {
       favicon: "./public/favicon.ico",
     }),
     new HotModuleReplacementPlugin(),
+    new DotenvWebpack({
+      path: path.resolve(__dirname, ".env.development"),
+      ignoreStub: true,
+    }),
   ],
   devtool: "inline-source-map",
   devServer: {

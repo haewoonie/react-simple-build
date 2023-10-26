@@ -8,7 +8,7 @@ function Login() {
   };
   return (
     <>
-      <LoginForm nextStep="/main" onLogin={onLogin}></LoginForm>
+      <LoginForm nextStep="#/main" onLogin={onLogin}></LoginForm>
     </>
   );
 }

@@ -2,6 +2,7 @@ import path from "path";
 import HtmlWebpackPlugin from "html-webpack-plugin";
 import { Configuration as WebpackConfig } from "webpack";
 import { CleanWebpackPlugin } from "clean-webpack-plugin";
+import DotenvWebpack from "dotenv-webpack";
 
 const config: WebpackConfig = {
   mode: "production",
@@ -51,6 +52,9 @@ const config: WebpackConfig = {
     new HtmlWebpackPlugin({
       template: "./public/index.html",
       favicon: "./public/favicon.ico",
+    }),
+    new DotenvWebpack({
+      path: path.resolve(__dirname, ".env.production"),
     }),
     new CleanWebpackPlugin(),
   ],

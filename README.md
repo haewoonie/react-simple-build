@@ -45,3 +45,10 @@ npm run build
 - /src/store
 - 预配置：用户名/密码
 - 持久化策略：sessionStorage
+
+.env 环境变量配置
+
+- 提供生产环境(.env.production)和开发环境(.env.development)两种环境配置
+- webpack 配置
+- 同时提供多.env 文件，修改`webpack.[ENV].config.ts`中`plugins:[DotenvWebpack]`的配置
+- 更多内容参考 [dotenv 文档](https://github.com/motdotla/dotenv)
