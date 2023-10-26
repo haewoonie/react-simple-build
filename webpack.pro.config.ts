@@ -27,16 +27,19 @@ const config: WebpackConfig = {
         },
       },
       {
-        test: /\.css?$/,
+        test: /\.css$/,
         use: ["style-loader", "css-loader"],
       },
       {
-        test: /\.less?$/,
+        test: /\.less$/,
         use: ["style-loader", "css-loader", "less-loader"],
       },
       {
-        test: /\.jpg|png|gif$/,
+        test: /\.(jpe?g|png|gif)$/i,
         use: "file-loader",
+        // options: {
+        //   name: "[path][name].[ext]",
+        // },
       },
     ],
   },
