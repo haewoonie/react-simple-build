@@ -53,6 +53,7 @@ const config: Configuration = {
   plugins: [
     new HtmlWebpackPlugin({
       template: "./public/index.html",
+      favicon: "./public/favicon.ico",
     }),
     new HotModuleReplacementPlugin(),
   ],
