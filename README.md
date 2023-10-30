@@ -52,3 +52,7 @@ npm run build
 - webpack 配置
 - 同时提供多.env 文件，修改`webpack.[ENV].config.ts`中`plugins:[DotenvWebpack]`的配置
 - 更多内容参考 [dotenv 文档](https://github.com/motdotla/dotenv)
+
+##### more to do
+
+- canvas/iframe 导出/打印解决方案(pdf/html 模板/xlsx)

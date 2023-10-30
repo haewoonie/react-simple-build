@@ -3,6 +3,7 @@ import HtmlWebpackPlugin from "html-webpack-plugin";
 import { Configuration as WebpackConfig } from "webpack";
 import { CleanWebpackPlugin } from "clean-webpack-plugin";
 import DotenvWebpack from "dotenv-webpack";
+import MinCssExtractPlugin from "mini-css-extract-plugin";
 
 const config: WebpackConfig = {
   mode: "production",
@@ -27,13 +28,21 @@ const config: WebpackConfig = {
           },
         },
       },
+      // {
+      //   test: /\.css$/,
+      //   use: ["style-loader", "css-loader"],
+      // },
+      // {
+      //   test: /\.less$/,
+      //   use: ["style-loader", "css-loader", "less-loader"],
+      // },
       {
         test: /\.css$/,
-        use: ["style-loader", "css-loader"],
+        use: [MinCssExtractPlugin.loader, "css-loader"],
       },
       {
         test: /\.less$/,
-        use: ["style-loader", "css-loader", "less-loader"],
+        use: [MinCssExtractPlugin.loader, "css-loader", "less-loader"],
       },
       {
         test: /\.(jpe?g|png|gif)$/i,
@@ -57,6 +66,9 @@ const config: WebpackConfig = {
       path: path.resolve(__dirname, ".env.production"),
     }),
     new CleanWebpackPlugin(),
+    new MinCssExtractPlugin({
+      filename: "index.css",
+    }),
   ],
 };
 
