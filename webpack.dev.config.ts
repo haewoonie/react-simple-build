@@ -43,7 +43,11 @@ const config: Configuration = {
         use: ["style-loader", "css-loader", "less-loader"],
       },
       {
-        test: /\.jpg|png|gif$/,
+        test: /\.jpg|png|gif|svg$/,
+        use: "file-loader",
+      },
+      {
+        test: /\.pdf|xls|doc|docx|xlsx$/i,
         use: "file-loader",
       },
     ],

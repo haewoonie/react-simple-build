@@ -45,11 +45,27 @@ const config: WebpackConfig = {
         use: [MinCssExtractPlugin.loader, "css-loader", "less-loader"],
       },
       {
-        test: /\.(jpe?g|png|gif)$/i,
-        use: "file-loader",
-        // options: {
-        //   name: "[path][name].[ext]",
-        // },
+        test: /\.(jpe?g|png|gif|svg)$/i,
+        use: [
+          {
+            loader: "file-loader",
+            options: {
+              name: "[name].[ext]",
+            },
+          },
+          "url-loader",
+        ],
+      },
+      {
+        test: /\.(pdf|xls|doc|docx|xlsx)$/i,
+        use: [
+          {
+            loader: "file-loader",
+            options: {
+              name: "[name].[ext]",
+            },
+          },
+        ],
       },
     ],
   },
